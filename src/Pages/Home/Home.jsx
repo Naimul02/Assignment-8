@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Books from "../../components/Books/Books";
 const Home = () => {
   return (
     <div>
@@ -19,6 +20,8 @@ const Home = () => {
           <img src="https://i.ibb.co/zf9QR07/pngwing-1.png" alt="" />
         </div>
       </div>
+      {/* Books section */}
+      <Books></Books>
     </div>
   );
 };

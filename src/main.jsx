@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
+import BookDetails from "./components/BookDetails/BookDetails.jsx";
 import "./index.css";
 import MainLayout from "./Layout/MainLayout.jsx";
 import Home from "./Pages/Home/Home.jsx";
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
       {
         path: "/pagestoread",
         element: <PagesToRead></PagesToRead>,
+      },
+      {
+        path: "/bookdetails/:id",
+        loader : () => fetch("/booksInfo.json"),
+        element: <BookDetails></BookDetails>,
       },
     ],
   },
