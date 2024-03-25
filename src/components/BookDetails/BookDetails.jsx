@@ -8,7 +8,7 @@ const BookDetails = () => {
   const book = books.find((book) => book.id === idInt);
   console.log(book);
   return (
-    <div className="min-h-screen mt-10">
+    <div className="min-h-screen my-10">
       <div className="flex flex-col lg:flex-row">
         <img
           src={book.book_img}

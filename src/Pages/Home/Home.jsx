@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Books from "../../components/Books/Books";
 const Home = () => {
   return (
-    <div>
+    <div className="mb-10">
       {/* Banner Section */}
       <div className="rounded-xl bg-base-200 flex justify-around items-center py-10 mt-4">
         <div>
