@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import ListedBook from "../../components/ListedBook/ListedBook";
-import { getStoredFromLocalStorage } from "../../localStorage/localStorage";
+import { getStoredFromLocalStorageRead } from "../../localStorage/localStorage";
+
 
 const ListedBooks = () => {
   const books = useLoaderData();
-  const selectedbooksId = getStoredFromLocalStorage();
+  const selectedbooksId = getStoredFromLocalStorageRead("read");
 
   const [readBooks, setReadBooks] = useState([]);
 
@@ -26,9 +27,18 @@ const ListedBooks = () => {
       </div>
 
       <div>
-          {
-            readBooks.map(readBook => <ListedBook key={readBook.id} readBook={readBook}></ListedBook>)
-          }
+        <Link to="/listedbooks">
+          <button className="mr-4">Read Books</button>
+        </Link>
+
+        <Link to="/wishlists">
+          <button>Wish Book</button>
+        </Link>
+      </div>
+      <div>
+        {readBooks.map((readBook) => (
+          <ListedBook key={readBook.id} readBook={readBook}></ListedBook>
+        ))}
       </div>
     </div>
   );
