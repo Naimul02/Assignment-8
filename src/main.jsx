@@ -6,6 +6,7 @@ import BookDetails from "./components/BookDetails/BookDetails.jsx";
 import Wishlists from "./components/Wishlists/Wishlists.jsx";
 import "./index.css";
 import MainLayout from "./Layout/MainLayout.jsx";
+import ErrorPage from "./Pages/ErrorPage/ErrorPage.jsx";
 import Home from "./Pages/Home/Home.jsx";
 import ListedBooks from "./Pages/ListedBooks/ListedBooks.jsx";
 import PagesToRead from "./Pages/PagesToRead/PagesToRead.jsx";
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
