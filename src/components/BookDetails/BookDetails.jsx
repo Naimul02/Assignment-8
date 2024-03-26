@@ -1,18 +1,23 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import { saveStoredToLocalStorage } from "../../localStorage/localStorage";
 const BookDetails = () => {
   const books = useLoaderData();
   const { id } = useParams();
   const idInt = parseInt(id);
-  console.log(books, idInt);
 
   const book = books.find((book) => book.id === idInt);
-  console.log(book);
+
+  const handleRead = (id) => {
+    saveStoredToLocalStorage(id);
+  };
+
   return (
     <div className="min-h-screen my-10">
       <div className="flex flex-col lg:flex-row">
         <img
           src={book.book_img}
-          className="w-[575px] h-[775px] rounded-lg bg-base-200 px-10 py-10"
+          className="lg:w-[575px] lg:h-[770px] rounded-lg bg-base-200 px-10 py-10"
         />
         <div className="ml-6">
           <h1 className="text-5xl font-bold">{book.bookName}</h1>
@@ -55,9 +60,16 @@ const BookDetails = () => {
           </div>
 
           <div className="mt-4">
-            <button className="btn btn-outline px-8">Read</button>
+            <button
+              className="btn btn-outline px-8"
+              onClick={() => handleRead(idInt)}
+            >
+              Read
+            </button>
+
             <button className="btn btn-warning ml-3 px-8">Wishlist</button>
           </div>
+          <ToastContainer />
         </div>
       </div>
     </div>
