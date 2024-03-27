@@ -4,9 +4,9 @@ const Home = () => {
   return (
     <div className="mb-10">
       {/* Banner Section */}
-      <div className="rounded-xl bg-base-200 flex justify-around items-center py-10 mt-4">
+      <div className="rounded-none  lg:rounded-xl bg-base-200 flex justify-center lg:justify-around items-center py-10 mt-4 flex-col lg:flex-row ">
         <div>
-          <h1 className="text-5xl font-bold">
+          <h1 className="text-3xl lg:text-5xl font-bold">
             Books to freshen <br /> up your bookshelf
           </h1>
           <Link to="/listedbooks">

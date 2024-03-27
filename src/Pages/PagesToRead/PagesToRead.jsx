@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import {
+  ResponsiveContainer,
   BarChart,
   Bar,
   Cell,
@@ -47,33 +48,35 @@ const PagesToRead = () => {
   };
 
   return (
-    <div>
-      <BarChart
-        width={1100}
-        height={500}
-        data={data}
-        margin={{
-          top: 50,
-          right: 30,
-          left: 50,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="bookName" />
-        <YAxis dataKey="totalPages" />
-        <Tooltip />
-        <Bar
-          dataKey="totalPages"
-          fill="#8884d8"
-          shape={<TriangleBar />}
-          label={{ position: "top" }}
+    <div style={{ width: "100%", height: 500 }}>
+      <ResponsiveContainer>
+        <BarChart
+          width={1100}
+          height={500}
+          data={data}
+          margin={{
+            top: 50,
+            right: 30,
+            // left: 10,
+            bottom: 5,
+          }}
         >
-          {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={colors[index % 20]} />
-          ))}
-        </Bar>
-      </BarChart>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="bookName" />
+          <YAxis dataKey="totalPages" />
+          <Tooltip />
+          <Bar
+            dataKey="totalPages"
+            fill="#8884d8"
+            shape={<TriangleBar />}
+            label={{ position: "top" }}
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={colors[index % 20]} />
+            ))}
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
     </div>
   );
 };

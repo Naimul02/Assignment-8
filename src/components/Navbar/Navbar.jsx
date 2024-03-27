@@ -29,11 +29,17 @@ const Navbar = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink to="">Listed Books</NavLink>
+              <NavLink to="/listedbooks">Listed Books</NavLink>
             </li>
 
             <li>
-              <NavLink to="">Pages to Read</NavLink>
+              <NavLink to="/pagestoread">Pages to Read</NavLink>
+            </li>
+            <li>
+              <NavLink to="/bookstore">Our Book Store</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contactus">Contact Us</NavLink>
             </li>
           </ul>
         </div>
@@ -56,9 +62,15 @@ const Navbar = () => {
           <li>
             <NavLink to="/pagestoread">Pages to Read</NavLink>
           </li>
+          <li>
+            <NavLink to="/bookstore">Our Book Store</NavLink>
+          </li>
+          <li>
+            <NavLink to="/contactus">Contact Us</NavLink>
+          </li>
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end hidden lg:block lg:ml-16 ">
         <a className="btn px-8 bg-slate-300 font-bold">Sign In</a>
         <a className="btn px-8 bg-slate-300 font-bold ml-4">Sign Up</a>
       </div>

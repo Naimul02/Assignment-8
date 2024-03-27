@@ -25,8 +25,8 @@ const BookDetails = () => {
           src={book.book_img}
           className="lg:w-[575px] lg:h-[770px] rounded-lg bg-base-200 px-10 py-10"
         />
-        <div className="ml-6">
-          <h1 className="text-5xl font-bold">{book.bookName}</h1>
+        <div className="ml-6 mt-6 lg:mt-0">
+          <h1 className="text-3xl lg:text-5xl font-bold">{book.bookName}</h1>
           <h3 className="mt-2">
             By : <span className="text-lg font-bold">{book.author}</span>
           </h3>
@@ -37,7 +37,7 @@ const BookDetails = () => {
             <span className="text-lg font-bold">Review : </span>
             {book.review}
           </p>
-          <div className="flex gap-2 border-y-2 py-4">
+          <div className="flex flex-col lg:flex-row gap-2 border-y-2 py-4">
             <h2 className="text-xl font-bold">Tags : </h2>
             <span className="font-semibold text-xl text-green-600 bg-base-200 rounded-full px-4 py-1 mr-2">
               #{book.tags[2]}
@@ -46,7 +46,7 @@ const BookDetails = () => {
               #{book.tags[1]}
             </span>
           </div>
-          <div className="md:w-[400px]">
+          <div className="md:w-[400px] mr-3 lg:mr-0">
             <div className="flex items-center justify-between">
               <p>Number of Pages :</p>
               <p className="text-xl font-bold">{book.totalPages}</p>
