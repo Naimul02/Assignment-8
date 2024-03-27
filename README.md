@@ -1,10 +1,9 @@
-# Website Name
-
-<h1>Book Vibe</h1>
+# Website Name : <h3>Book Vibe </h3>
 
 # Website Link
 
 <ul>
+ <h2>Features and Characteristics of my website</h2>
   <li>A navbar has been created on this website.Where there are several routes,which are active routes.If the user clicks on a route, he will understand which route he is in now.</li>
 
   <li>There is a route called Home where clicking will bring you to the homepage, where there is a banner section and another section called Books where there are several cards of Books.</li>
